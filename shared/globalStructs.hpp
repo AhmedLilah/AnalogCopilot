@@ -6,9 +6,11 @@
 #include <cstdlib>
 
 static std::filesystem::path userHome = std::getenv("HOME");
-static std::filesystem::path programHome = userHome/".Abstract/SA";
+static std::filesystem::path abstractHome = userHome/".Abstract";
+static std::filesystem::path programHome = abstractHome/"AnalogCopilot";
 
 struct CommonPaths {
+        std::filesystem::path abstractHomePath = abstractHome;
         std::filesystem::path programHomePath = programHome;
         std::filesystem::path netlistDirectoryPath = programHome/"Netlist";
         std::filesystem::path logOutputDirectoryPath = programHome/"Log";

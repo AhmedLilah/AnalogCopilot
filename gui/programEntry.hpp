@@ -7,7 +7,6 @@
 #include <tk.h>
 
 #include "gui.hpp"
-#include "../tcl/tcl.hpp"
 #include "tclDecls.h"
 #include "tkDecls.h"
 
