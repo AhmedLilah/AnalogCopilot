@@ -19,7 +19,7 @@ void generateGui(Tcl_Interp* interp) {
         Tcl_Eval(interp, "package require Tk");
 
         // Create the main window
-        Tcl_Eval(interp, "wm title . \"MOSFET Sizing Assistant\"");
+        Tcl_Eval(interp, "wm title . \"Analog Copilot\"");
 
         // Create the frame for the top controls (Tech, Device, Corner, Temp)
         Tcl_Eval(interp, "frame .top");
