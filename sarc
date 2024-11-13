@@ -1,0 +1,57 @@
+#!/usr/bin/tclsh
+
+set vgs_list {}
+set id_list {}
+set gm_list {}
+set gds_list {}
+set vth_list {}
+set gm_id_list {}
+set gm_gds_list {}
+set id_w_list {}
+
+# set PDKs {gf180mcuA gf180mcuB gf180mcuC gf180mcuD ihp-sg13g2 sky130A sky130B}
+set PDKDevices {
+nfet_01v8_lvt 
+nfet_01v8 
+nfet_03v3_nvt 
+nfet_05v0_nvt 
+nfet_05v0_nvt 
+nfet_g5v0d10v5 
+nfet_g5v0d16v0 
+nfet_20v0
+nfet_20v0_iso
+nfet_20v0_nvt
+nfet_20v0_zvt
+pfet_01v8_lvt 
+pfet_01v8 
+pfet_01v8_hvt 
+pfet_g5v0d10v5 
+pfet_g5v0d16v0 
+pfet_20v0
+}
+
+# set PKD {}
+set deviceModel {}
+set deviceCorner "tt"
+set simulationTemprature "27"
+
+set W   "10"
+set L   "1"
+set NF  "1"
+set M   "1"
+set VGS "0.75"
+set VDS "1.0"
+set VSB "0.0"
+
+set libraryIncludePath "/usr/local/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice"
+
+set deviceNetlistTemplate "XM1 dnet gnet snet bnet sky130_fd_pr__DEVICEMODEL L=SA_L W=SA_W nf=SA_NF ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=SA_M 
++ m=SA_M"
+
+set opAnalysis "op"
+set vgsSweepAnalysis "dc VGS 0.001 1 0.01"
+
+set deviceSaveModel "m.xm1.msky130_fd_pr__INSTANCESAVE"
+
+

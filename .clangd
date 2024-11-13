@@ -1,0 +1,2 @@
+CompileFlags:
+  Add: [-std=c++23, -O3, -stdlib=libc++, -ltcl, -ltk, -L/usr/lib/tcl8.6, -I/usr/include/tcl8.6]
