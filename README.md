@@ -8,4 +8,4 @@ Run the following command in the repo root directory to compile the program exec
 ## Running the program
 
 Run the following command from the repo root directory to run the program
-> `./AnalogCopilto`
+> `./AnalogCopilot`
